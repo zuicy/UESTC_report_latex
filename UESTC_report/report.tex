@@ -1,0 +1,187 @@
+%!Mode:: "TeX:UTF-8"
+% 模板名称：UESTC_report
+% 模板版本：V1.0（2019.12.12）
+% 模板作者：SiYu Zhu
+% 模板编译：XeLaTeX，如果要使用超链接\ref的话，编译两次，两次，两次！！！
+% Github：XeLaTeX，如果要使用超链接\ref的话，编译两次，两次，两次！！！
+%
+% 此模板为电子科技大学信软学院实验报告模板，
+% 是基于UESTC_Lab_Report_LaTeX_Template模板的改进版，
+% 由于2019年下半学期实验中心更新了模板，因此对之前的模板进行了改进，
+% 在此向这个模板的作者致谢！
+% 主要改动有：
+%           1.将配置单独放在了settings.tex文件中。
+%           2.增加超链接跳转功能，方便图片与文字相隔很远时进行阅读。
+%           3.修改图表标题文字为五号。
+%           4.更改模板样式为新版实验报告模板。
+%           5.增加了代码选项列表。
+
+\documentclass[a4paper,11pt,UTF8,AutoFakeBold= {2.88}]{ctexart}
+\input{settings.tex}
+% 导入配置文件settings.tex，
+% 配置参数均存储在settings.tex文件中，
+% 添加或修改均需在该文件中进行
+
+\begin{document}
+\xiaosihao\song
+
+\begin{titlepage}
+  \leftline{\ktgb{\textbf{\yihao{ 电子科技大学}\underline{\xiaoyihao{信息与软件工程学院}}}}}
+\vspace{5.5cm}
+\center{\shiyanbaogao{\ktgb{\textbf{标~ 准~ 实~ 验~ 报~ 告}}}}
+\vspace{5.5cm}
+
+\begin{center}
+\begin{large}
+\begin{tabular}{rc}
+
+\xiaoerhao{\ktgb{\textbf{（实验）课程名称：}}}& \xiaoerhao{\ktgb{\textbf{XXXX}}}\\
+\cline{2-2}\\
+
+\end{tabular}
+\end{large}
+\end{center}
+
+\vspace{5cm}
+\begin{center}
+  \xiaosihao{\song{\textbf{电子科技大学教务处制表}}}
+\end{center}
+
+\end{titlepage}
+\clearpage
+
+
+\leftline{\\[10pt]\sihao{\textbf{\song{学生姓名：XXX \hfill 学号：XXXX \hfill 指导教师：XXX }}}}
+
+\leftline{\\[10pt]\sihao{\song{\textbf{实验地点：信软楼西XXX \hfill 实验时间：XXXX-XX-XX}}}}
+
+
+
+
+\setlength{\parskip}{6pt}  %定义段间距
+
+\section{实验室名称：XXX}
+
+
+\section{实验项目名称：XXX}
+
+
+\section{实验学时：}
+
+
+\section{实验原理:}
+
+
+
+\section{实验器材（设备、元器件）:}
+
+
+\section{实验步骤:}
+
+\subsection{复制}
+
+按下ctrl+c
+
+\subsection{粘贴}
+
+按下ctrl+v
+
+\section{实验数据及结果与分析:}
+
+
+\section{实验结论、心得体会:}
+
+
+\section{对本实验过程及方法、手段的改进建议:}
+
+
+
+\vspace{4cm}
+\begin{flushright}
+\begin{tabular}{lc}
+\sihao{\song{\textbf{报告评分：}}}& \sihao{\textbf{\song{X~X~X}}}\\
+\sihao{\song{\textbf{指导教师签字：}}}& \sihao{\song{\textbf{X~X~X}}}\\
+\end{tabular}
+\end{flushright}
+
+\begin{appendix}
+
+\section{代码示例}
+
+%listings官方文档：http://texdoc.net/texmf-dist/doc/latex/listings/listings.pdf
+
+
+\begin{lstlisting}[caption={一段python代码},captionpos=b,language=python]
+  #!/usr/bin/python
+  # -*- coding: UTF-8 -*-
+   
+  print("hello world")
+\end{lstlisting}
+
+支持的语言如图\ref{language}
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=\textwidth]{language}
+  \bottomcaption{\wuhao{language}}
+  \label{language}
+  \end{figure}
+
+\section{图片示例}
+超链接：运行结果如图\ref{logo}
+  \begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=\textwidth]{logo}
+  \bottomcaption{\wuhao{电子科技大学}}
+  \label{logo}
+  \end{figure}
+
+\section{伪代码示例}
+
+\begin{algorithm}
+\caption{某个算法}
+\begin{algorithmic}[1]  %每行显示行号
+\Require 某个输入
+\Ensure 某个输出
+\Function {函数名} {参数列表}
+    \State 某个变量  $\gets$ 某个变量
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
+
+\section{字体示例}
+\hei{黑体}
+\hwxk{华文行楷}
+
+\section{表格示例}
+
+\begin{table}[!h!tbp]
+\caption{一个简单的表格}\label{tab1}
+  \centering
+  \begin{tabular}{|l|c|c|}
+	\hline
+	功能          &WEB         &APP         \\ \hline
+	注册          &$\surd$     &$\surd$     \\ \hline
+	登录          &$\surd$     &$\surd$     \\ \hline
+	推送          &$\times$    &$\surd$     \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[!h!tbp]
+\caption{自定义表格}\label{tab2}
+  \centering
+\begin{tabular*}{0.75\textwidth}{@{\extracolsep{\fill}}lcc}
+    \toprule
+    功能          &WEB         &APP         \\
+    \midrule
+    注册          &$\surd$     &$\surd$     \\
+    登录          &$\surd$     &$\surd$     \\
+    推送          &$\times$    &$\surd$     \\
+    \bottomrule
+\end{tabular*}
+\end{table}
+
+
+\end{appendix}
+
+\end{document}
